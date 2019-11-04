@@ -2,7 +2,7 @@
 """
 Created on Thu Sep  5 16:14:27 2019
 
-Create script that runs all time series efficiently through 
+Create script that runs all time series through 
 HW, FB, and XGBoost
 
 @author: chasenuzum
@@ -23,7 +23,7 @@ h = 6
 date_range = pd.date_range('2012-01-01', '2019-01-01', freq='MS') 
 
 #---Select Macros, MEIs---
-#Forecast all time series for coatings; forecast out
+#Forecast all time series; forecast out
 macdataloc = open(r'') #locate MEIs file path
 j = pd.read_csv(macdataloc)
 
@@ -42,9 +42,11 @@ y['Date'] = y['Date'].astype('datetime64[ns]')
 y.index = (y['Date'])
 #y = y.drop(columns = [])
 y1 = y.loc[date_range]
+#Replace 0 with nans
 y1 = y1.replace(0, np.nan)
-y1 = y1.fillna(y1.mean())
-ylog = np.log(y1.iloc[:, 1:])
+
+y1 = y1.fillna(y1.mean()) #mean to replace missing values
+ylog = np.log(y1.iloc[:, 1:]) #can remove log if needed
 ylog['ds'] = y['Date']
 
 #---Columns to loop; called 'teams'---
@@ -62,7 +64,7 @@ smoothy['ds'] = date_range
 ylog = smoothy.dropna()
 
 #Check simple moving average for smoothness
-plt.plot(ylog.index,ylog['Total_Team_Neb'])
+plt.plot(ylog.index,ylog[''])
 plt.show()
 """
 
