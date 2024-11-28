@@ -7,9 +7,8 @@ BulkCaster is a comprehensive time series forecasting tool designed to handle mu
 - [Features](#features)
 - [Folder Structure](#folder-structure)
 - [Installation](#installation)
-- [Usage](#usage)
-  - [Running the Streamlit App](#running-the-streamlit-app)
-  - [Running Forecasts via Script](#running-forecasts-via-script)
+- [Running the Streamlit App](#running-the-streamlit-app)
+- [Running Forecasts via Script](#running-forecasts-via-script)
 - [Forecasting Methods](#forecasting-methods)
 - [Examples](#examples)
 - [Dependencies](#dependencies)
@@ -74,50 +73,48 @@ pip install --upgrade pip setuptools
 
 The Streamlit app provides an interactive interface for uploading your time series data, selecting forecasting methods, and visualizing the forecasts.
 1.	Start the Streamlit app:
-
 ```bash
 streamlit run app.py
 ```
-
 2.	Upload Data:
-•	Prepare your time series data in a CSV file.
-•	Ensure the CSV file contains a timestamp column and one or more numerical columns representing different time series.
-•	The timestamp column should be in a datetime format or convertible to datetime.
+-	Prepare your time series data in a CSV file.
+-	Ensure the CSV file contains a timestamp column and one or more numerical columns representing different time series.
+-	The timestamp column should be in a datetime format or convertible to datetime.
 3.	Interact with the App:
-•	Select the timestamp column after uploading your data.
-•	Choose the forecasting methods you wish to use.
-•	Set the forecast horizon and training data range.
-•	Run the forecast and view the results.
+-	Select the timestamp column after uploading your data.
+-	Choose the forecasting methods you wish to use.
+-	Set the forecast horizon and training data range.
+-	Run the forecast and view the results.
 
 ## Running Forecasts via Script
 
 You can run forecasts directly using the run_forecast.py script, which utilizes the BulkCaster class.
 1.	Prepare your data:
-•	Place your CSV file in the data/ directory or specify the path in the script.
-•	Ensure your data is properly formatted with a timestamp index.
+-	Place your CSV file in the data/ directory or specify the path in the script.
+-	Ensure your data is properly formatted with a timestamp index.
 2.	Configure the script:
-•	Open run_forecast.py and set the desired parameters, such as:
-•	Path to the data file.
-•	List of time series columns to forecast.
-•	Forecasting methods to use.
-•	Forecast horizon.
+-	Open run_forecast.py and set the desired parameters, such as:
+-	Path to the data file.
+-	List of time series columns to forecast.
+-	Forecasting methods to use.
+-	Forecast horizon.
 3.	Run the script:
 ``` bash
 python run_forecast.py
 ```
 4.	View Results:
-•	The script will output the forecasts and evaluation metrics.
-•	Results can be saved to files or printed to the console.
+-	The script will output the forecasts and evaluation metrics.
+-	Results can be saved to files or printed to the console.
 
 ## Forecasting Methods:
-•	ARIMA: Autoregressive Integrated Moving Average model.
-•	Facebook Prophet: Time series forecasting model by Facebook.
-•	Holt-Winters: Exponential smoothing with trend and seasonality.
-•	Theta Method: Decomposition-based forecasting method.
-•	VAR: Vector Autoregression for multivariate time series.
-•	XGBoost: Extreme Gradient Boosting with support for VAR inputs.
-•	Darts RNN: Recurrent Neural Network models from the Darts library.
-•	Darts N-BEATS: Neural Basis Expansion Analysis for Interpretable Time Series Forecasting.
+-	ARIMA: Autoregressive Integrated Moving Average model.
+-	Facebook Prophet: Time series forecasting model by Facebook.
+-	Holt-Winters: Exponential smoothing with trend and seasonality.
+-	Theta Method: Decomposition-based forecasting method.
+-	VAR: Vector Autoregression for multivariate time series.
+-	XGBoost: Extreme Gradient Boosting with support for VAR inputs.
+-	RNN: Recurrent Neural Network models from the Darts library.
+-	N-BEATS: Neural Basis Expansion Analysis for Interpretable Time Series Forecasting.
 
 Examples
 
@@ -174,17 +171,17 @@ python run_forecast.py
 ## Dependencies
 
 Ensure that the following Python packages are installed (as specified in requirements.txt):
-•	pandas
-•	numpy
-•	statsmodels
-•	scikit-learn
-•	xgboost
-•	pmdarima
-•	prophet
-•	darts
-•	streamlit
-•	matplotlib
-•	plotly
+-	pandas
+-	numpy
+-	statsmodels
+-	scikit-learn
+-	xgboost
+-	pmdarima
+-	prophet
+-	darts
+-	streamlit
+-	matplotlib
+-	plotly
 
 Install all dependencies using:
 ```bash
